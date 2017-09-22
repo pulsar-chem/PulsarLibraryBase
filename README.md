@@ -32,35 +32,10 @@ How To Use
    ```git
    git subrepo clone https://github.com/pulsar-chem/PulsarLibraryBase
    ```
-2. In the top-level directory of your project create a `CMakeLists.txt` that
-   includes the following:
-   ```cmake
-   cmake_minimum_required(VERSION 3.1)
-   project(MyRepo-SuperBuild CXX) #Or whatever languages it uses
-   set(PULSAR_LIBRARY_NAME MyRepo)
-   set(PULSAR_LIBRARY_DEPENDS <list of dependencies>)
-   add_subdirectory(PulsarLibraryBase)
-   ```
-   Obviously substitute the "MyRepo" for the name of your library.
-   :memo: The values assigned to `PULSAR_LIBRARY_DEPENDS` will be passed to
-   `find_package`, as is, to resolve the dependencies.
-3. In the top-level directory you will need two additional directories that
-   their names should be `MyRepo` and `MyRepo_Test`. We'll call these the source
-   and testing directories respectively.
-4. Inside the source directory you will need a `CMakeLists.txt` similar to:
-   ```cmake
-   cmake_minimum_required(VERSION 3.1)
-   project(MyRepo CXX) #Or whatever languages it uses
-
-   #Use relative paths for the next two lists
-   set(<An arbitrary variable name> <all your source files>)
-   set(<Another arbitrary variable name> <all includes to install>)
-
-   pulsar_add_library(<Your Library's Name> <compile flags>
-                                            ${Arbitrary Variable 1}
-                                            ${Arbitrary Variable 2}
-   )
-   ```
+2. Run: `PulsarLibraryBase/bin/BasicSetup.sh <MyRepo>`
+3. Add your dependencies to `CMakeLists.txt`
+4. Fill in the source files and public headers of your library in `MyRepo/CMakeLists.txt`
+5. Add your tests to `MyRepo/CMakeLists.txt`
 
 Results
 =======
