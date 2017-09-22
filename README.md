@@ -70,17 +70,17 @@ of one main target called `MyRepo`.  A `MyRepoConfig.cmake` CMake configuration
 file will be generated for you from your build settings.  Finally, it will all
 be installed as:
 
-:file_folder: CMAKE_INSTALL_PREFIX
-├──:file_folder: include
-|  └──:file_folder: MyRepo
-|     └──:page_facing_up: MyHeaderFile.hpp
-├──:file_folder: lib
-|  └──:file_folder: MyRepo
-|     └──:books: libMyRepo.so
-└──:file_folder: share
-   └──:file_folder: cmake
-      └──:file_folder: MyRepo
-         └──:page_facing_up: MyRepoConfig.cmake
+:file_folder: CMAKE_INSTALL_PREFIX  
+├──:file_folder: include  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──:file_folder: MyRepo  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──:page_facing_up: MyHeaderFile.hpp  
+├──:file_folder: lib  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──:file_folder: MyRepo  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──:books: libMyRepo.so  
+└──:file_folder: share  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──:file_folder: cmake  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──:file_folder: MyRepo  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──:page_facing_up: MyRepoConfig.cmake
 
 Furthermore because `PulsarLibraryBase` takes care of 99.9% of the build for
 you, we went ahead and wrote your build documentation for you.  Just include
@@ -93,13 +93,13 @@ Assumptions
 This setup assumes you are building a library and that you will want to install
 that library. It furthermore assumes your repository is laid out as follows:
 
-:file_folder: root
-├──:file_folder: PulsarLibraryBase
-├──:file_folder: MyRepo
-|  └──:page_facing_up: CMakeLists.txt
-├──:file_folder: MyRepo_Test
-|  └──:page_facing_up: CMakeLists.txt
-└──:page_facing_up: CMakeLists.txt
+:file_folder: root  
+├──:file_folder: PulsarLibraryBase  
+├──:file_folder: MyRepo  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──:page_facing_up: CMakeLists.txt  
+├──:file_folder: MyRepo_Test  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└──:page_facing_up: CMakeLists.txt  
+└──:page_facing_up: CMakeLists.txt  
 
 Aside from that, the layout of your repository is somewhat arbitrary as long as
 you set the variables described above correctly and use the provided macros.
